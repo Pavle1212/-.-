@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Noto Serif Georgian", Georgia, serif;
+  --font-sans: "Noto Sans Georgian", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    font-family: var(--font-sans);
+    background-color: #12161c;
+    color: #f4efe4;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #d4a34a;
+    outline-offset: 2px;
+  }
+}
+
+.georgian-heritage-bg {
+  background-color: #10141b;
+  background-image:
+    radial-gradient(circle at 50% 18%, rgba(212, 163, 74, 0.11) 0%, rgba(16, 20, 27, 0) 52%),
+    radial-gradient(circle at 82% 80%, rgba(124, 58, 237, 0.08) 0%, rgba(16, 20, 27, 0) 48%),
+    url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4a34a' stroke-opacity='0.055' stroke-width='1'%3E%3Cpath d='M36 4 L68 36 L36 68 L4 36 Z'/%3E%3Cpath d='M36 16 L56 36 L36 56 L16 36 Z'/%3E%3Ccircle cx='36' cy='36' r='6'/%3E%3Ccircle cx='0' cy='0' r='3'/%3E%3Ccircle cx='72' cy='0' r='3'/%3E%3Ccircle cx='0' cy='72' r='3'/%3E%3Ccircle cx='72' cy='72' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #131822 0%, #0d1118 55%, #121720 100%);
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spiritRise {
+  0% {
+    opacity: 0;
+    transform: translateY(38px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes bellSwing {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes cloudDrift {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(14px);
+  }
+}
+
+@keyframes gentleSway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes petalDrift {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.85);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-54px) scale(1.1);
+  }
+}
+
+@keyframes hopCheer {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  40% {
+    transform: translateY(-8px) scale(1.04);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.8s ease-in-out infinite;
+}
+
+.animate-spirit-rise {
+  animation: spiritRise 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bell-swing {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: bellSwing 3.4s ease-in-out infinite;
+}
+
+.animate-cloud-drift {
+  animation: cloudDrift 9s ease-in-out infinite;
+}
+
+.animate-sway {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: gentleSway 4.2s ease-in-out infinite;
+}
+
+.animate-petal-drift {
+  animation: petalDrift 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-hop-cheer {
+  animation: hopCheer 0.7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-spirit-rise,
+  .animate-bell-swing,
+  .animate-cloud-drift,
+  .animate-sway,
+  .animate-petal-drift,
+  .animate-hop-cheer {
+    animation: none !important;
+  }
+}
